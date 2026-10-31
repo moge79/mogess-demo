@@ -8,10 +8,26 @@ const SECRET = crypto.createHash('sha256').update('mogess|' + PASSWORD).digest('
 const DATA = path.join(__dirname, 'data', 'products.json');
 const UP = path.join(__dirname, 'uploads');
 fs.mkdirSync(UP, { recursive: true });
-if (!fs.existsSync(DATA)) fs.writeFileSync(DATA, '[]');
 
 const load = () => JSON.parse(fs.readFileSync(DATA, 'utf8'));
 const save = d => fs.writeFileSync(DATA, JSON.stringify(d, null, 2));
+// First run on a fresh server: create the data folder and sample products
+fs.mkdirSync(path.dirname(DATA), { recursive: true });
+if (!fs.existsSync(DATA)) {
+  const S = [
+    ['sofa','1','ባለ 1 ወንበር ሶፋ','1-seater sofa','ግራጫ ጨርቅ','Grey fabric',16500],
+    ['sofa','2','ባለ 2 ወንበር ሶፋ','2-seater sofa','ቡናማ ቆዳ፣ 160 ሴ.ሜ','Brown leather, 160 cm',36000],
+    ['sofa','3','ባለ 3 ወንበር ሶፋ','3-seater sofa','ግራጫ ጨርቅ፣ 210 ሴ.ሜ','Grey fabric, 210 cm',48500],
+    ['sofa','L','ኤል ቅርጽ ሶፋ','L-shaped sofa','ሰማያዊ ጨርቅ፣ ለ6 ሰው','Teal fabric, seats 6',89000],
+    ['bed','','ባለ ድርብ አልጋ','Double bed','የእንጨት ፍሬም፣ 160×200','Wood frame, 160×200',32000],
+    ['bed','','ባለ አንድ አልጋ','Single bed','የእንጨት ፍሬም፣ 90×200','Wood frame, 90×200',17500],
+    ['table','','የመመገቢያ ጠረጴዛ ለ6','Dining table, 6 seats','የሜፕል እንጨት','Maple wood',27500],
+    ['table','','የመመገቢያ ጠረጴዛ ለ4','Dining table, 4 seats','የእንጨት፣ ክብ','Wood, round',19800]
+  ];
+  save(S.map((r, i) => ({ id: 1000 + i, cat: r[0], sub: r[1], name_am: r[2], name_en: r[3],
+    desc_am: r[4], desc_en: r[5], price: r[6], inStock: true, images: [] })));
+}
+
 const token = () => crypto.createHmac('sha256', SECRET).update('admin').digest('hex');
 const isAdmin = req => (req.headers.cookie || '').split(';').some(c => c.trim() === 'auth=' + token());
 const guard = (req, res, next) => isAdmin(req) ? next() : res.status(401).json({ error: 'login' });
