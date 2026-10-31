@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ሞገስ ፈርኒቸር · Mogess Furniture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Sans+Ethiopic:wght@400;600;800&family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#EEF1EE; --surface:#FFFFFF; --ink:#14302B; --muted:#52645F; --line:#D3DBD6;
+  --brand:#14302B; --on-brand:#F2F5F1; --accent:#B7791F; --accent-ink:#14302B; --tg:#1D7FB8;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1A18; --surface:#18262A; --ink:#E8EEEA; --muted:#9DB0AA; --line:#2B3C39;
+    --brand:#E8EEEA; --on-brand:#0F1A18; --accent:#E0A94A; --accent-ink:#0F1A18; --tg:#5BB4E5;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1A18; --surface:#18262A; --ink:#E8EEEA; --muted:#9DB0AA; --line:#2B3C39;
+  --brand:#E8EEEA; --on-brand:#0F1A18; --accent:#E0A94A; --accent-ink:#0F1A18; --tg:#5BB4E5;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans Ethiopic","Noto Sans",system-ui,sans-serif;line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:"Fraunces","Noto Sans Ethiopic",Georgia,serif;line-height:1.15;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.logo{font-family:"Fraunces",serif;font-weight:700;font-size:1.3rem;text-decoration:none}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{border:0;background:transparent;color:var(--ink);padding:7px 16px;font:inherit;font-size:.9rem;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--brand);color:var(--on-brand)}
+
+.hero{padding:56px 0 40px;display:grid;gap:32px;grid-template-columns:1.1fr .9fr;align-items:center}
+.hero h1{font-size:clamp(2.1rem,5.5vw,3.6rem);font-weight:700;max-width:14ch}
+.hero p{color:var(--muted);max-width:46ch;margin:18px 0 26px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font:inherit;font-weight:600;text-decoration:none;border:2px solid var(--brand);cursor:pointer;background:var(--brand);color:var(--on-brand)}
+.btn.alt{background:transparent;color:var(--ink)}
+.btn.tg{background:var(--tg);border-color:var(--tg);color:#fff}
+.hero-art{background:var(--surface);border:1px solid var(--line);border-radius:28px 28px 120px 28px;padding:28px}
+.hero-art svg{width:100%;height:auto;display:block}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 24px}
+.chip{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:.95rem;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));padding-bottom:56px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.card .pic{padding:22px 22px 6px;background:var(--bg)}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:8px}
+.cat img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:8px}
+.sold{color:var(--muted);font-weight:600}
+.card svg{width:100%;height:auto;display:block}
+.card .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:1.15rem}
+.card .meta{color:var(--muted);font-size:.9rem}
+.price{font-weight:800;font-size:1.1rem;margin-top:auto;padding-top:8px}
+.card .btns{display:flex;gap:8px;margin-top:10px}
+.card .btn{flex:1;justify-content:center;padding:10px 8px;font-size:.92rem;border-radius:8px}
+
+.contact{background:var(--brand);color:var(--on-brand);padding:48px 0}
+.contact h2{font-size:1.8rem;margin-bottom:10px}
+.contact p{margin:0 0 20px;opacity:.85;max-width:50ch}
+.contact .btn{background:var(--on-brand);color:var(--brand);border-color:var(--on-brand)}
+.contact .btn.tg{background:var(--tg);border-color:var(--tg);color:#fff}
+footer{padding:20px 0;color:var(--muted);font-size:.9rem}
+
+.nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;-webkit-overflow-scrolling:touch}
+.nav a{white-space:nowrap;padding:7px 16px;border-radius:999px;text-decoration:none;border:1px solid var(--line);background:var(--surface);font-size:.95rem}
+.nav a[aria-current="page"]{background:var(--brand);color:var(--on-brand);border-color:var(--brand)}
+.catgrid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));padding-bottom:8px}
+.cat{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 18px 18px}
+.cat h3{margin-top:6px;font-size:1.2rem}.cat span{color:var(--muted);font-size:.9rem}
+.hidden{display:none!important}
+.hero-art{position:relative;min-height:330px;padding:0;overflow:hidden}
+.slide{position:absolute;inset:24px 24px 56px;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateX(28px) scale(.97);transition:opacity .9s ease,transform .9s ease;pointer-events:none}
+.slide.on{opacity:1;transform:none}
+.slide svg{width:100%;height:auto}
+.slide img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+.slide-label{position:absolute;left:0;right:0;bottom:-34px;text-align:center;font-weight:600;color:var(--muted)}
+.dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:10px}
+.dot{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:var(--line);cursor:pointer}
+.dot.on{background:var(--accent);transform:scale(1.2)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.slide.on svg{animation:float 5s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.slide,.slide.on svg{transition:none;animation:none}}
+@media (max-width:760px){.hero-art{min-height:280px}}
+@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:32px}.hero-art{order:-1}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+  <a class="logo" href="#home">ሞገስ ፈርኒቸር · Mogess</a>
+  <div class="lang" role="group" aria-label="Language">
+    <button id="l-am" aria-pressed="true">አማርኛ</button>
+    <button id="l-en" aria-pressed="false">English</button>
+  </div>
+</div><nav class="wrap nav" id="nav" aria-label="Pages"></nav></header>
+
+<main id="top">
+<section class="wrap hero" id="pgHome">
+  <div>
+    <h1 data-i="heroTitle"></h1>
+    <p data-i="heroText"></p>
+    <div class="cta">
+      <a class="btn" href="#sofa" data-i="browse"></a>
+      <a class="btn alt" data-call data-i="call"></a>
+    </div>
+  </div>
+  <div class="hero-art" id="heroArt"></div>
+</section>
+
+<section class="wrap" id="cats"><div class="catgrid" id="catgrid"></div></section>
+<section class="wrap" id="catalog" style="padding-top:28px">
+  <h2 id="pgTitle" style="font-size:1.8rem;margin-bottom:16px"></h2>
+  <div class="filters" id="filters" role="group"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <h2 data-i="orderTitle"></h2>
+  <p data-i="orderText"></p>
+  <div class="cta">
+    <a class="btn" data-call data-i="call"></a>
+    <a class="btn tg" data-tg target="_blank" rel="noopener" data-i="telegram"></a>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap" data-i="foot"></div></footer>
+
+<script>
+/* ===== Edit these: shop details ===== */
+var SHOP = { phone:"+251979310139", phoneShow:"0979 31 01 39", telegram:"Dnmoge" };
+var COLORS={sofa:"#5C6E78",bed:"#A47A4B",table:"#B08A5A"};
+
+var T = {
+  am:{
+    heroTitle:"ለቤትዎ የሚመጥን ምቹ ሶፋና የቤት ዕቃ",
+    heroText:"ጠንካራ፣ ዘመናዊና በጥንቃቄ የተሠሩ ሶፋዎች፣ አልጋዎችና ጠረጴዛዎች። ምርቱን ይምረጡ፣ በስልክ ወይም በቴሌግራም ያዙ።",
+    browse:"ምርቶችን ይመልከቱ", call:"ደውለው ያዙ", telegram:"በቴሌግራም ያዙ",
+    catalogTitle:"ምርቶቻችን",
+    orderTitle:"ማዘዝ ቀላል ነው",
+    orderText:"የወደዱትን ምርት ስም ይንገሩን። ዋጋውን፣ የማድረሻ ቀኑንና የክፍያ አማራጩን በስልክ ወይም በቴሌግራም እናስረዳዎታለን።",
+    foot:"© 2026 ሞገስ ፈርኒቸር። ዋጋዎች ለምሳሌ የተሞሉ ናቸው።",
+    all:"ሁሉም", home:"መነሻ", sofa:"ሶፋ", bed:"አልጋ", table:"የመመገቢያ ጠረጴዛ", s1:"ባለ 1", s2:"ባለ 2", s3:"ባለ 3", sL:"ኤል ቅርጽ", count:" ምርቶች", photoNote:"",
+    etb:"ብር", call2:"ደውለው ያዙ", tg2:"ቴሌግራም",
+    msg:"ሰላም፣ ይህን ምርት ማዘዝ እፈልጋለሁ፦ "
+  },
+  en:{
+    heroTitle:"Comfortable sofas and furniture made for your home",
+    heroText:"Sturdy, modern, carefully built sofas, beds and tables. Pick what you like, then order by phone or Telegram.",
+    browse:"Browse products", call:"Call to order", telegram:"Order on Telegram",
+    catalogTitle:"Our products",
+    orderTitle:"Ordering is simple",
+    orderText:"Tell us the name of the item you like. We will confirm the price, delivery date and payment options by phone or Telegram.",
+    foot:"© 2026 Mogess Furniture. Prices shown are samples.",
+    all:"All", home:"Home", sofa:"Sofas", bed:"Beds", table:"Dining tables", s1:"1-seater", s2:"2-seater", s3:"3-seater", sL:"L-shaped", count:" items", photoNote:"",
+    etb:"ETB", call2:"Call", tg2:"Telegram",
+    msg:"Hello, I would like to order this item: "
+  }
+};
+
+var PAGES=["home","sofa","bed","table"];
+var PRODUCTS = [];
+var SUBS=["all","1","2","3","L"], sub="all";
+function art(c, kind){
+  /* simple sofa/bed/table/chair drawings, filled with the item colour */
+  var s = '<svg viewBox="0 0 240 150" role="img" aria-hidden="true">';
+  if(kind==="sofa"||kind==="chair"){
+    var w = kind==="sofa" ? 200 : 120, x = (240-w)/2;
+    s += '<rect x="'+(x+14)+'" y="30" width="'+(w-28)+'" height="60" rx="16" fill="'+c+'"/>';
+    s += '<rect x="'+x+'" y="62" width="26" height="62" rx="12" fill="'+c+'" opacity=".85"/>';
+    s += '<rect x="'+(x+w-26)+'" y="62" width="26" height="62" rx="12" fill="'+c+'" opacity=".85"/>';
+    s += '<rect x="'+(x+20)+'" y="78" width="'+(w-40)+'" height="40" rx="10" fill="'+c+'" opacity=".7"/>';
+    s += '<rect x="'+(x+10)+'" y="122" width="10" height="14" rx="3" fill="#14302B"/><rect x="'+(x+w-20)+'" y="122" width="10" height="14" rx="3" fill="#14302B"/>';
+  } else if(kind==="bed"){
+    s += '<rect x="30" y="28" width="180" height="50" rx="8" fill="'+c+'"/>';
+    s += '<rect x="30" y="74" width="180" height="40" rx="8" fill="'+c+'" opacity=".75"/>';
+    s += '<rect x="44" y="60" width="60" height="20" rx="8" fill="#fff" opacity=".7"/><rect x="136" y="60" width="60" height="20" rx="8" fill="#fff" opacity=".7"/>';
+    s += '<rect x="30" y="112" width="10" height="22" fill="#14302B"/><rect x="200" y="112" width="10" height="22" fill="#14302B"/>';
+  } else {
+    s += '<rect x="40" y="52" width="160" height="16" rx="6" fill="'+c+'"/>';
+    s += '<rect x="58" y="68" width="10" height="64" fill="'+c+'" opacity=".8"/><rect x="172" y="68" width="10" height="64" fill="'+c+'" opacity=".8"/>';
+  }
+  return s + '</svg>';
+}
+
+
+function sofaArt(c,v){
+  var W={"1":110,"2":150,"3":190,"L":200}[v]||190, x=(240-W)/2, n=v==="1"?1:(v==="2"?2:3), cw=(W-60)/n, i;
+  var o='<svg viewBox="0 0 240 150" aria-hidden="true">';
+  o+='<ellipse cx="120" cy="134" rx="'+(W/2+12)+'" ry="6" fill="#000" opacity=".13"/>';
+  o+='<rect x="'+(x+12)+'" y="22" width="'+(W-24)+'" height="72" rx="18" fill="'+c+'"/>';
+  if(v==="L") o+='<rect x="'+(x+W-80)+'" y="98" width="100" height="24" rx="10" fill="'+c+'" opacity=".9"/>';
+  for(i=0;i<n;i++) o+='<rect x="'+(x+30+i*cw+1)+'" y="72" width="'+(cw-2)+'" height="36" rx="10" fill="'+c+'" opacity=".75" stroke="#000" stroke-opacity=".12"/>';
+  o+='<rect x="'+x+'" y="54" width="30" height="66" rx="14" fill="'+c+'"/>';
+  o+='<rect x="'+(x+W-30)+'" y="54" width="30" height="66" rx="14" fill="'+c+'"/>';
+  o+='<rect x="'+(x+8)+'" y="106" width="'+(W-16)+'" height="14" rx="6" fill="'+c+'" opacity=".92"/>';
+  o+='<rect x="'+(x+14)+'" y="120" width="8" height="12" rx="3" fill="#14302B"/><rect x="'+(x+W-22)+'" y="120" width="8" height="12" rx="3" fill="#14302B"/>';
+  o+='<rect x="'+(x+38)+'" y="44" width="30" height="28" rx="9" fill="#fff" opacity=".3" transform="rotate(-8 '+(x+53)+' 58)"/>';
+  return o+'</svg>';
+}
+var heroTimer=null, heroIdx=0;
+function heroShow(i){
+  var sl=document.querySelectorAll("#heroArt .slide"), dt=document.querySelectorAll("#heroArt .dot");
+  if(!sl.length) return; heroIdx=i%sl.length;
+  sl.forEach(function(e,k){ e.classList.toggle("on",k===heroIdx); });
+  dt.forEach(function(e,k){ e.classList.toggle("on",k===heroIdx); });
+}
+function heroInit(){
+  var box=document.getElementById("heroArt"); clearInterval(heroTimer); box.innerHTML="";
+  var real=PRODUCTS.filter(function(p){return p.cat==="sofa"&&p.img;}).slice(0,5), data=[];
+  if(real.length) real.forEach(function(p){ data.push({img:p.img,am:p.am,en:p.en}); });
+  else [["3","#2F6F73","ባለ 3 ወንበር ሶፋ","3-seater sofa"],["L","#7A4B2E","ኤል ቅርጽ ሶፋ","L-shaped sofa"],["2","#5C6E78","ባለ 2 ወንበር ሶፋ","2-seater sofa"],["1","#B7791F","ባለ 1 ወንበር ሶፋ","1-seater sofa"]]
+    .forEach(function(a){ data.push({svg:sofaArt(a[1],a[0]),am:a[2],en:a[3]}); });
+  var dots=document.createElement("div"); dots.className="dots";
+  data.forEach(function(d,i){
+    var sl=document.createElement("div"); sl.className="slide"+(i===0?" on":"");
+    if(d.img){ var im=document.createElement("img"); im.alt=""; im.src=d.img; sl.appendChild(im); } else sl.innerHTML=d.svg;
+    var lb=document.createElement("div"); lb.className="slide-label"; lb.dataset.am=d.am; lb.dataset.en=d.en; lb.textContent=d[lang]; sl.appendChild(lb);
+    box.appendChild(sl);
+    var b=document.createElement("button"); b.className="dot"+(i===0?" on":""); b.setAttribute("aria-label",String(i+1));
+    b.onclick=function(){ heroShow(i); }; dots.appendChild(b);
+  });
+  box.appendChild(dots);
+  if(!window.matchMedia("(prefers-reduced-motion:reduce)").matches)
+    heroTimer=setInterval(function(){ heroShow(heroIdx+1); },3800);
+}
+var lang="am", page="home";
+try{ var sv=localStorage.getItem("lang"); if(sv==="en"||sv==="am") lang=sv; }catch(e){}
+function fmt(n){ return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,","); }
+function tg(text){ return "https://t.me/"+SHOP.telegram+"?text="+encodeURIComponent(text); }
+function route(){ var h=(location.hash||"").replace("#",""); page=PAGES.indexOf(h)>=0?h:"home"; sub="all"; render(); if(location.hash) window.scrollTo(0,0); }
+
+function render(){
+  var t=T[lang];
+  document.documentElement.lang=lang;
+  document.title=lang==="am"?"ሞገስ ፈርኒቸር":"Mogess Furniture";
+  document.querySelectorAll("[data-i]").forEach(function(el){ el.textContent=t[el.getAttribute("data-i")]; });
+  document.querySelectorAll("[data-call]").forEach(function(a){ a.href="tel:"+SHOP.phone; });
+  document.querySelectorAll("[data-tg]").forEach(function(a){ a.href=tg(t.msg); });
+  document.getElementById("l-am").setAttribute("aria-pressed",lang==="am");
+  document.getElementById("l-en").setAttribute("aria-pressed",lang==="en");
+
+  document.querySelectorAll(".slide-label").forEach(function(el){ el.textContent=el.dataset[lang]; });
+  var nav=document.getElementById("nav"); nav.innerHTML="";
+  PAGES.forEach(function(p){ var a=document.createElement("a"); a.href="#"+p; a.textContent=t[p]; if(p===page) a.setAttribute("aria-current","page"); nav.appendChild(a); });
+
+  var home=page==="home";
+  document.getElementById("pgHome").classList.toggle("hidden",!home);
+  document.getElementById("cats").classList.toggle("hidden",!home);
+  document.getElementById("catalog").classList.toggle("hidden",false);
+  var cg=document.getElementById("catgrid"); cg.innerHTML="";
+  if(home){ ["sofa","bed","table"].forEach(function(k){
+    var first=PRODUCTS.filter(function(p){return p.cat===k;})[0];
+    var a=document.createElement("a"); a.className="cat"; a.href="#"+k;
+    a.innerHTML=(first&&first.img?"<img alt=\"\" src=\""+first.img+"\">":art(COLORS[k],k))+'<h3></h3><span></span>';
+    a.querySelector("h3").textContent=t[k];
+    a.querySelector("span").textContent=PRODUCTS.filter(function(p){return p.cat===k;}).length+t.count;
+    cg.appendChild(a); }); }
+
+  var title=document.getElementById("pgTitle");
+  title.textContent=home?(lang==="am"?"አዳዲስ ምርቶች":"Featured"):t[page];
+  var f=document.getElementById("filters"); f.innerHTML="";
+  if(page==="sofa"){ SUBS.forEach(function(k){
+    var b=document.createElement("button"); b.className="chip"; b.textContent=k==="all"?t.all:t["s"+k];
+    b.setAttribute("aria-pressed",sub===k); b.onclick=function(){ sub=k; render(); }; f.appendChild(b); }); }
+
+  var list=PRODUCTS.filter(function(p){ return home?PRODUCTS.indexOf(p)<4:(p.cat===page&&(sub==="all"||p.sub===sub)); });
+  var g=document.getElementById("grid"); g.innerHTML="";
+  list.forEach(function(p){
+    var name=p[lang], d=p["d"+lang];
+    var c=document.createElement("article"); c.className="card";
+    c.innerHTML='<div class="pic">'+(p.img?'<img alt="" loading="lazy" src="'+p.img+'">':art(COLORS[p.cat],p.cat))+'</div><div class="body"><h3></h3><div class="meta"></div><div class="price"></div><div class="btns"></div></div>';
+    c.querySelector("h3").textContent=name;
+    c.querySelector(".meta").textContent=d;
+    c.querySelector(".price").textContent=p.sold?(lang==="am"?"ተሽጧል":"Sold out"):fmt(p.price)+" "+t.etb;
+    var bt=c.querySelector(".btns");
+    var a1=document.createElement("a"); a1.className="btn"; a1.href="tel:"+SHOP.phone; a1.textContent=t.call2;
+    var a2=document.createElement("a"); a2.className="btn tg"; a2.href=tg(t.msg+name); a2.target="_blank"; a2.rel="noopener"; a2.textContent=t.tg2;
+    bt.appendChild(a1); bt.appendChild(a2); g.appendChild(c);
+  });
+}
+document.getElementById("l-am").onclick=function(){ lang="am"; try{localStorage.setItem("lang",lang);}catch(e){} render(); };
+document.getElementById("l-en").onclick=function(){ lang="en"; try{localStorage.setItem("lang",lang);}catch(e){} render(); };
+window.addEventListener("hashchange",route);
+fetch("/api/products").then(function(r){return r.json();}).then(function(d){
+  PRODUCTS=d.map(function(p){return {id:p.id,cat:p.cat,sub:p.sub,am:p.name_am,en:p.name_en||p.name_am,dam:p.desc_am,den:p.desc_en||p.desc_am,price:p.price,img:p.images&&p.images[0],sold:!p.inStock};});
+  heroInit();
+  route();
+}).catch(function(){ heroInit(); route(); });
+</script>
+</body>
+</html>
