@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1792949613842,
+    "cat": "sofa",
+    "sub": "2",
+    "name_am": "ባለ 2 ወንበር ሶፋ",
+    "name_en": "2-seater sofa",
+    "desc_am": "",
+    "desc_en": "This is yours 2 seater sofa",
+    "price": 40012,
+    "inStock": true,
+    "images": [
+      "/uploads/1792949613594-eu3g61.jpg"
+    ]
+  },
+  {
+    "id": 1000,
+    "cat": "sofa",
+    "sub": "1",
+    "name_am": "ባለ 1 ወንበር ሶፋ",
+    "name_en": "1-seater sofa",
+    "desc_am": "ግራጫ ጨርቅ",
+    "desc_en": "Grey fabric",
+    "price": 16500,
+    "inStock": true,
+    "images": [
+      "/uploads/1792760819135-cmgyr8.jpg"
+    ]
+  },
+  {
+    "id": 1001,
+    "cat": "sofa",
+    "sub": "2",
+    "name_am": "ባለ 2 ወንበር ሶፋ",
+    "name_en": "2-seater sofa",
+    "desc_am": "ቡናማ ቆዳ፣ 160 ሴ.ሜ",
+    "desc_en": "Brown leather, 160 cm",
+    "price": 36000,
+    "inStock": true,
+    "images": [
+      "/uploads/1792950679494-f28n0d.jpg"
+    ]
+  },
+  {
+    "id": 1002,
+    "cat": "sofa",
+    "sub": "3",
+    "name_am": "ባለ 3 ወንበር ሶፋ",
+    "name_en": "3-seater sofa",
+    "desc_am": "ግራጫ ጨርቅ፣ 210 ሴ.ሜ",
+    "desc_en": "Grey fabric, 210 cm",
+    "price": 48500,
+    "inStock": true,
+    "images": [
+      "/uploads/1792950703759-qnnvwz.jpg"
+    ]
+  },
+  {
+    "id": 1003,
+    "cat": "sofa",
+    "sub": "L",
+    "name_am": "ኤል ቅርጽ ሶፋ",
+    "name_en": "L-shaped sofa",
+    "desc_am": "ሰማያዊ ጨርቅ፣ ለ6 ሰው",
+    "desc_en": "Teal fabric, seats 6",
+    "price": 89000,
+    "inStock": true,
+    "images": [
+      "/uploads/1792950720739-85l6xm.jpg"
+    ]
+  },
+  {
+    "id": 1004,
+    "cat": "bed",
+    "sub": "",
+    "name_am": "ባለ ድርብ አልጋ",
+    "name_en": "Double bed",
+    "desc_am": "የእንጨት ፍሬም፣ 160×200",
+    "desc_en": "Wood frame, 160×200",
+    "price": 32000,
+    "inStock": true,
+    "images": [
+      "/uploads/1792950734583-rbiup6.jpg"
+    ]
+  },
+  {
+    "id": 1005,
+    "cat": "table",
+    "sub": "",
+    "name_am": "m",
+    "name_en": "Sin",
+    "desc_am": "የእንጨት ፍሬም፣ 90×200",
+    "desc_en": "Wood frame, 90×200",
+    "price": 17500,
+    "inStock": true,
+    "images": [
+      "/uploads/1792950898816-bqlcw0.jpg"
+    ]
+  },
+  {
+    "id": 1006,
+    "cat": "table",
+    "sub": "",
+    "name_am": "የመመገቢያ ጠረጴዛ ለ6",
+    "name_en": "Dining table, 6 seats",
+    "desc_am": "የሜፕል እንጨት",
+    "desc_en": "Maple wood",
+    "price": 27500,
+    "inStock": true,
+    "images": [
+      "/uploads/1792950809513-66d374.jpg"
+    ]
+  },
+  {
+    "id": 1007,
+    "cat": "table",
+    "sub": "",
+    "name_am": "የመመገቢያ ጠረጴዛ ለ4",
+    "name_en": "Dining table, 4 seats",
+    "desc_am": "የእንጨት፣ ክብ",
+    "desc_en": "Wood, round",
+    "price": 19800,
+    "inStock": true,
+    "images": [
+      "/uploads/1792950831646-n3odch.jpg"
+    ]
+  }
+]
